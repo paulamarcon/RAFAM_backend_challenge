@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from friends_lessons.api.views import UserApiView
+from friends_lessons.api.views import UserApiView, UserFriendshipsApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/users/', UserApiView.as_view())
+    path('api/users/', UserApiView.as_view()),
+    path('api/friendships', UserFriendshipsApiView.as_view())
 ]
